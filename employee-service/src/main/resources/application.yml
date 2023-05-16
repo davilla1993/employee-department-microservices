@@ -1,0 +1,15 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: EMPLOYEE-SERVICE
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/employee_service
+    username: root
+    password: toortoor
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
