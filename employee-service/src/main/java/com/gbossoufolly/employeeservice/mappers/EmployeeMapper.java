@@ -15,7 +15,7 @@ public class EmployeeMapper {
                 .id(employeeDto.getId())
                 .firstName(employeeDto.getFirstName())
                 .lastName(employeeDto.getLastName())
-                .address(employeeDto.getAddress())
+                .email(employeeDto.getEmail())
                 .phone(employeeDto.getPhone())
                 .departmentId(employeeDto.getDepartmentId())
                 .build();
@@ -29,7 +29,7 @@ public class EmployeeMapper {
                 .id(employee.getId())
                 .firstName(employee.getFirstName())
                 .lastName(employee.getLastName())
-                .address(employee.getAddress())
+                .email(employee.getEmail())
                 .phone(employee.getPhone())
                 .departmentId(employee.getDepartmentId())
                 .build();

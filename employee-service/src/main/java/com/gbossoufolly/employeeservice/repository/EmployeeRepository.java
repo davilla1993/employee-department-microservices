@@ -12,4 +12,6 @@ import java.util.UUID;
 public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
 
     List<Employee> findByDepartmentId(UUID departmentId);
+
+    Employee findByEmail(String email);
 }

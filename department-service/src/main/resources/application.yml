@@ -1,12 +1,12 @@
   server:
-    port:8080
+    port: 8080
 
   spring:
     application:
       name: DEPARTMENT-SERVICE
     datasource:
       driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/department
+      url: jdbc:mysql://localhost:3306/department_service
       username: root
       password: toortoor
     jpa:

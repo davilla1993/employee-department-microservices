@@ -44,13 +44,12 @@ public class EmployeeServiceImpl implements EmployeeServices {
                     ErrorCode.EMPLOYEE_NOT_VALID, errors);
         }
 
-        UUID employeeId = employeeDto.getId();
+        String email = employeeDto.getEmail();
+        Employee existEmployee = employeeRepository.findByEmail(email);
 
-        Optional<Employee> existEmployee = employeeRepository.findById(employeeId);
-
-        if(existEmployee.isPresent()) {
-            log.error("Employee with ID " + employeeId + "already exists.");
-            throw new EntityAlreadyExistException("Employee with ID " + employeeId + "already exists",
+        if(existEmployee != null) {
+            log.error("Employee with email " + email + "already exists.");
+            throw new EntityAlreadyExistException("Employee with email " + email + " already exists",
                     ErrorCode.EMPLOYEE_ALREADY_EXISTS);
         }
 
@@ -134,7 +133,7 @@ public class EmployeeServiceImpl implements EmployeeServices {
 
         existEmployee.setFirstName(employeeDto.getFirstName());
         existEmployee.setLastName(employeeDto.getLastName());
-        existEmployee.setAddress(employeeDto.getAddress());
+        existEmployee.setEmail(employeeDto.getEmail());
         existEmployee.setPhone(employeeDto.getPhone());
         existEmployee.setDepartmentId(employeeDto.getDepartmentId());
 
