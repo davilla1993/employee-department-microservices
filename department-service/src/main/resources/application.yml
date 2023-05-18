@@ -1,9 +1,10 @@
   server:
     port: 8080
-
   spring:
     application:
       name: DEPARTMENT-SERVICE
+    config:
+      import: optional:configserver:http://localhost:8888
     datasource:
       driverClassName: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/department_service
@@ -13,3 +14,11 @@
       hibernate.ddl-auto: update
       generate-ddl: true
       show-sql: true
+
+  eureka:
+    instance:
+      hostname: localhost
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka
+

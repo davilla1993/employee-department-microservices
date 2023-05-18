@@ -2,8 +2,6 @@ package com.gbossoufolly.departmentservice.controllers.api;
 
 import com.gbossoufolly.departmentservice.dto.ApiResponse;
 import com.gbossoufolly.departmentservice.dto.DepartmentDto;
-import io.swagger.annotations.Api;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
