@@ -1,3 +1,10 @@
+  eureka:
+    instance:
+      hostname: localhost
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka
+
   server:
     port: 8080
   spring:
@@ -15,10 +22,6 @@
       generate-ddl: true
       show-sql: true
 
-  eureka:
-    instance:
-      hostname: localhost
-    client:
-      service-url:
-        defaultZone: http://localhost:8761/eureka
-
+  application:
+    config:
+      employees-url: http://localhost:8090/api/v1/employee

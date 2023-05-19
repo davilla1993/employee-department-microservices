@@ -32,10 +32,11 @@ public interface DepartmentApi {
     @DeleteMapping("delete/{departmentId}")
     ResponseEntity<ApiResponse> deleteDepartement(@PathVariable("departmentId") UUID departmentId);
 
-    @GetMapping("/all-dept-empl")
-    ResponseEntity<List<DepartmentDto>> getAllDepartmentWithEmployees();
-
     @GetMapping("one-department/{departmentId}")
     ResponseEntity<DepartmentDto> getOneDepartmentWithEmployees(@PathVariable("departmentId")
                                                                 UUID departmentId);
+
+    @GetMapping("/all-dept-empl")
+    ResponseEntity<List<DepartmentDto>> getAllDepartmentWithEmployees();
+
 }

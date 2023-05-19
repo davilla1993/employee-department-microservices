@@ -1,6 +1,7 @@
 package com.gbossoufolly.departmentservice.services.impl;
 
 import com.gbossoufolly.departmentservice.dto.DepartmentDto;
+import com.gbossoufolly.departmentservice.dto.FullDepartmentDto;
 import com.gbossoufolly.departmentservice.exceptions.EntityAlreadyExistException;
 import com.gbossoufolly.departmentservice.exceptions.EntityNotFoundException;
 import com.gbossoufolly.departmentservice.exceptions.ErrorCode;
@@ -152,7 +153,17 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<DepartmentDto> getAllDepartmentWithEmployees(UUID departmentId) {
+    public List<FullDepartmentDto> getAllDepartmentWithEmployees(UUID departmentId) {
+
+        if(departmentId == null) {
+            log.error("Department ID is NULL");
+        }
+
+        Department existDepartment = departmentRepository.findById(departmentId)
+                .orElseThrow(() -> new EntityNotFoundException("Department not found with ID " + departmentId,
+                        ErrorCode.DEPARTMENT_NOT_FOUND));
+
+
         return null;
     }
 }

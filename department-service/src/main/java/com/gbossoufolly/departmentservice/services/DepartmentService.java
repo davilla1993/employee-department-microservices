@@ -1,6 +1,7 @@
 package com.gbossoufolly.departmentservice.services;
 
 import com.gbossoufolly.departmentservice.dto.DepartmentDto;
+import com.gbossoufolly.departmentservice.dto.FullDepartmentDto;
 
 import java.util.List;
 import java.util.UUID;
@@ -17,7 +18,7 @@ public interface DepartmentService {
 
     void deleteDepartement(UUID departmentId);
 
-    List<DepartmentDto> getAllDepartmentWithEmployees(UUID departmentId);
+    List<FullDepartmentDto> getAllDepartmentWithEmployees(UUID departmentId);
 
 
 
